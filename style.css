@@ -364,3 +364,25 @@ footer {
     list-style: none;
     padding: 0;
 }
+.icon-btn {
+    background: var(--surface-highlight);
+    border: 1px solid var(--divider);
+    color: var(--text-secondary);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.icon-btn:active {
+    transform: scale(0.9);
+    background: var(--divider);
+}
+
+.icon-btn svg {
+    opacity: 0.8;
+}
