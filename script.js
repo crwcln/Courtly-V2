@@ -103,7 +103,58 @@ function updateScore(team) {
             else elScore2.style.color = 'var(--accent-color)';
         }
     }
+}/* --- STATE TRACKING --- */
+let score1 = 0;
+let score2 = 0;
+let historyStack = []; // Stores previous scores for undoing
+
+const undoBtn = document.getElementById('undoBtn');
+
+function updateScore(team) {
+    // Save current state before changing it
+    historyStack.push({ s1: score1, s2: score2 });
+
+    if (team === 1) {
+        score1++;
+        elScore1.innerText = score1;
+    } else {
+        score2++;
+        elScore2.innerText = score2;
+    }
+    
+    checkWinCondition();
 }
+
+function undoLastAction() {
+    if (historyStack.length === 0) return;
+
+    // Pop the last saved state
+    const prevState = historyStack.pop();
+    
+    score1 = prevState.s1;
+    score2 = prevState.s2;
+
+    // Update UI
+    elScore1.innerText = score1;
+    elScore2.innerText = score2;
+    
+    // Reset colors in case we were at game point
+    elScore1.style.color = 'var(--text-primary)';
+    elScore2.style.color = 'var(--text-primary)';
+}
+
+function checkWinCondition() {
+    if (score1 >= 11 || score2 >= 11) {
+        if (Math.abs(score1 - score2) >= 2) {
+            if (score1 > score2) elScore1.style.color = 'var(--accent-color)';
+            else elScore2.style.color = 'var(--accent-color)';
+        }
+    }
+}
+
+// Add Click Listener
+undoBtn.addEventListener('click', undoLastAction);
+
 
 }
 
