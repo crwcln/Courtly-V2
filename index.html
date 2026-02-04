@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Courtly | Pickleball Scorekeeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="court-anim">
+            <div class="ball"></div>
+        </div>
+        <div id="loading-text">Stay out of the kitchen...</div>
+    </div>
+
+    <div class="sidebar-overlay" id="overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <h2>Courtly.</h2>
+        <div class="nav-item">Match History <span>&rarr;</span></div>
+        <div class="nav-item">Settings <span>&rarr;</span></div>
+        <div class="nav-item">Rules <span>&rarr;</span></div>
+        <div class="nav-item" id="resetBtn">Reset Score <span>&#x21bb;</span></div>
+    </nav>
+
+    <header>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="logo">Courtly<span>.</span></div>
+        <div style="width: 28px;"></div> </header>
+
+    <main>
+        <div class="scores-container">
+            <div class="team-card serving" id="team1">
+                <div class="team-name">Us</div>
+                <div class="score-num" id="score1">0</div>
+            </div>
+
+            <div class="team-card" id="team2">
+                <div class="team-name">Them</div>
+                <div class="score-num" id="score2">0</div>
+            </div>
+        </div>
+
+        <div class="server-control-area">
+            <div class="server-label">Server</div>
+            <button class="server-toggle" id="serverNum">1</button>
+        </div>
+    </main>
+
+    <footer>
+        Build v1.0.7 (Stable)
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
