@@ -16,13 +16,28 @@
     </div>
 
     <div class="sidebar-overlay" id="overlay"></div>
+        <div class="sidebar-overlay" id="overlay"></div>
     <nav class="sidebar" id="sidebar">
         <h2>Courtly.</h2>
-        <div class="nav-item">Match History <span>&rarr;</span></div>
+        
+        <div class="nav-section">
+            <div class="nav-header">Match History</div>
+            <ul id="historyList" class="history-list">
+                <li class="empty-state">No matches played yet.</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
         <div class="nav-item">Settings <span>&rarr;</span></div>
         <div class="nav-item">Rules <span>&rarr;</span></div>
-        <div class="nav-item" id="resetBtn">Reset Score <span>&#x21bb;</span></div>
+        
+        <div class="sidebar-actions">
+            <button class="action-btn save" id="saveBtn">Save & End Match</button>
+            <button class="action-btn reset" id="resetBtn">Reset Score</button>
+        </div>
     </nav>
+
 
     <header>
         <button class="menu-btn" id="menuBtn" aria-label="Menu">
