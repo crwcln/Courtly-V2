@@ -86,6 +86,25 @@ function updateScore(team) {
         score2++;
         elScore2.innerText = score2;
     }
+    function updateScore(team) {
+    if (team === 1) {
+        score1++;
+        elScore1.innerText = score1;
+    } else {
+        score2++;
+        elScore2.innerText = score2;
+    }
+
+    // Check for "Game Point" (11 points)
+    if (score1 >= 11 || score2 >= 11) {
+        if (Math.abs(score1 - score2) >= 2) {
+            // Highlight the winning score in Pickleball Green
+            if (score1 > score2) elScore1.style.color = 'var(--accent-color)';
+            else elScore2.style.color = 'var(--accent-color)';
+        }
+    }
+}
+
 }
 
 // Add Click Listeners to Cards
